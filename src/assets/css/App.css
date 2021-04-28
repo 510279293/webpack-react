@@ -1,0 +1,76 @@
+.logo {
+    width: 135px;
+    height: 31px;
+    /* background: rgba(255, 255, 255, 0.2); */
+    margin: 0px 26px 16px ;
+    float: left;
+  }
+  
+  * {  margin: 0;  padding: 0;  }
+  
+  body, html {  width: 100%;  height: auto;background: #fff;min-width:1200px;font-family: Monospaced Number,Chinese Quote,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Helvetica Neue,Helvetica,Arial,sans-serif;}
+  
+  h1, h2, h3, h4, h5, h6, p, ul, li, ol, dl, dd, dt, form, input, body, p {  margin: 0;  padding: 0;  list-style: none; margin-bottom: 0 }
+  
+  i, u, del, b {  font-style: normal;  text-decoration: none;  }
+  
+  input[type=checkbox]{-webkit-appearance: checkbox;}
+  
+  .root .right-drap{
+      cursor:pointer;
+      -webkit-transition:all .3s;
+      -o-transition:all .3s;
+      transition:all .3s;
+      line-height:60px;
+      height:64px;
+      display:flex;
+      flex-direction:row;
+      align-items:center;
+      justify-content:flex-end;
+  }
+  /* 退出登陆样式 */
+  .login-out{
+      font-size: 15px;
+      padding: 5px 12px;
+      margin: 0;
+      clear: both;
+      font-size: 14px;
+      font-weight: normal;
+      color: rgba(0,0,0,.65);
+      white-space: nowrap;
+      cursor: pointer;
+      -webkit-transition: all .3s;
+      transition: all .3s;
+      line-height: 22px;
+  }
+  .login-out-icon{
+      min-width: 12px;
+      margin-right: 8px;
+  }
+  .header-right-img{
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      margin: 20px 8px 20px 0;
+  }
+  .header-right-account{
+      color: #fff;
+      font-size: 14px;
+      overflow: hidden;
+      text-overflow:ellipsis;
+      white-space: nowrap;
+  }
+  .root .header-top-right-resetting{
+    width: 150px;
+    float: right;
+  }
+  /*右侧退出登录*/
+  .ant-dropdown-menu-vertical{
+    top:0 !important
+  }
+  .ant-table{
+    font-size: 12px;
+  }
+  .ant-layout{
+    overflow-y: hidden;
+  }
