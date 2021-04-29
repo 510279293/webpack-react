@@ -8,7 +8,7 @@ import clearConsole from 'react-dev-utils/clearConsole'
 import configFn, { devServer } from './config'
 import { appPath } from './utils'
 const PORT = '3000'
-const HOST = ip() || '127.0.0.1'
+const HOST = '0.0.0.0' || '127.0.0.1'
 const isInteractive = process.stdout.isTTY
 const config = configFn()
 const devServerConfig = Object.assign({}, devServer(), {
@@ -27,15 +27,20 @@ const compilerInvalidCallBack = () => {
 }
 
 const start = async () => {
+    console.log(config)
     try {
-        await checkBrowsers(appPath, isInteractive)
+        // await checkBrowsers(appPath, isInteractive)
         const port = await choosePort(HOST, PORT)
         if (!port) return 
-        const compiler = webpack(config)
+        const compiler = await webpack(config)
         compiler.hooks.invalid.tap('invalid', compilerInvalidCallBack)
-        const server = new WebpackDevServer(compiler, devServerConfig)
+        const server = await new WebpackDevServer(compiler, devServerConfig)
         server.listen(port, HOST, (err) => {
-           console.log(`your App started at: ${ yellow(bold(`http://${HOST}:${port}`))}  or  ${ yellow(bold(`http://localhost:${port}`))}`)
+           console.log(`your App started at: 
+           ${ yellow(bold(`http://${HOST}:${port}`))}  \n 
+           ${ yellow(bold(`http://localhost:${port}`))} \n
+           ${ yellow(bold(`http://${ip()}:${port}`))}
+           `)
         })
     } catch (err) {
         if (err && err.message) {

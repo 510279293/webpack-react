@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { Provider } from 'react-redux'
-function App(){
+function App(props: Record<string, any>){
     return (
         <div className="App">
             {/* <Provider store={}> */}
